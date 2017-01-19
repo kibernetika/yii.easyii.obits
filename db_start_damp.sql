@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Дамп структуры базы данных yii_easy_obits
+DROP DATABASE IF EXISTS `yii_easy_obits`;
 CREATE DATABASE IF NOT EXISTS `yii_easy_obits` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `yii_easy_obits`;
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_admins
+DROP TABLE IF EXISTS `easyii_admins`;
 CREATE TABLE IF NOT EXISTS `easyii_admins` (
   `admin_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL,
@@ -32,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `easyii_admins` (
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_article_categories
+DROP TABLE IF EXISTS `easyii_article_categories`;
 CREATE TABLE IF NOT EXISTS `easyii_article_categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
@@ -55,6 +58,7 @@ INSERT INTO `easyii_article_categories` (`category_id`, `title`, `image`, `order
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_article_items
+DROP TABLE IF EXISTS `easyii_article_items`;
 CREATE TABLE IF NOT EXISTS `easyii_article_items` (
   `item_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
@@ -80,6 +84,7 @@ INSERT INTO `easyii_article_items` (`item_id`, `category_id`, `title`, `image`, 
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_carousel
+DROP TABLE IF EXISTS `easyii_carousel`;
 CREATE TABLE IF NOT EXISTS `easyii_carousel` (
   `carousel_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(128) NOT NULL,
@@ -101,6 +106,7 @@ INSERT INTO `easyii_carousel` (`carousel_id`, `image`, `link`, `title`, `text`, 
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_catalog_categories
+DROP TABLE IF EXISTS `easyii_catalog_categories`;
 CREATE TABLE IF NOT EXISTS `easyii_catalog_categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
@@ -127,6 +133,7 @@ INSERT INTO `easyii_catalog_categories` (`category_id`, `title`, `image`, `field
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_catalog_items
+DROP TABLE IF EXISTS `easyii_catalog_items`;
 CREATE TABLE IF NOT EXISTS `easyii_catalog_items` (
   `item_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
@@ -154,6 +161,7 @@ INSERT INTO `easyii_catalog_items` (`item_id`, `category_id`, `title`, `descript
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_catalog_item_data
+DROP TABLE IF EXISTS `easyii_catalog_item_data`;
 CREATE TABLE IF NOT EXISTS `easyii_catalog_item_data` (
   `data_id` int(11) NOT NULL AUTO_INCREMENT,
   `item_id` int(11) DEFAULT NULL,
@@ -191,6 +199,7 @@ INSERT INTO `easyii_catalog_item_data` (`data_id`, `item_id`, `name`, `value`) V
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_faq
+DROP TABLE IF EXISTS `easyii_faq`;
 CREATE TABLE IF NOT EXISTS `easyii_faq` (
   `faq_id` int(11) NOT NULL AUTO_INCREMENT,
   `question` text NOT NULL,
@@ -210,6 +219,7 @@ INSERT INTO `easyii_faq` (`faq_id`, `question`, `answer`, `order_num`, `status`)
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_feedback
+DROP TABLE IF EXISTS `easyii_feedback`;
 CREATE TABLE IF NOT EXISTS `easyii_feedback` (
   `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -231,6 +241,7 @@ CREATE TABLE IF NOT EXISTS `easyii_feedback` (
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_files
+DROP TABLE IF EXISTS `easyii_files`;
 CREATE TABLE IF NOT EXISTS `easyii_files` (
   `file_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
@@ -250,6 +261,7 @@ CREATE TABLE IF NOT EXISTS `easyii_files` (
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_gallery_categories
+DROP TABLE IF EXISTS `easyii_gallery_categories`;
 CREATE TABLE IF NOT EXISTS `easyii_gallery_categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
@@ -274,6 +286,7 @@ INSERT INTO `easyii_gallery_categories` (`category_id`, `title`, `image`, `slug`
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_guestbook
+DROP TABLE IF EXISTS `easyii_guestbook`;
 CREATE TABLE IF NOT EXISTS `easyii_guestbook` (
   `guestbook_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -298,6 +311,7 @@ INSERT INTO `easyii_guestbook` (`guestbook_id`, `name`, `title`, `text`, `answer
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_loginform
+DROP TABLE IF EXISTS `easyii_loginform`;
 CREATE TABLE IF NOT EXISTS `easyii_loginform` (
   `log_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(128) NOT NULL,
@@ -317,6 +331,7 @@ INSERT INTO `easyii_loginform` (`log_id`, `username`, `password`, `ip`, `user_ag
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_migration
+DROP TABLE IF EXISTS `easyii_migration`;
 CREATE TABLE IF NOT EXISTS `easyii_migration` (
   `version` varchar(180) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
@@ -332,6 +347,7 @@ INSERT INTO `easyii_migration` (`version`, `apply_time`) VALUES
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_modules
+DROP TABLE IF EXISTS `easyii_modules`;
 CREATE TABLE IF NOT EXISTS `easyii_modules` (
   `module_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -366,6 +382,7 @@ INSERT INTO `easyii_modules` (`module_id`, `name`, `class`, `title`, `icon`, `se
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_news
+DROP TABLE IF EXISTS `easyii_news`;
 CREATE TABLE IF NOT EXISTS `easyii_news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
@@ -390,6 +407,7 @@ INSERT INTO `easyii_news` (`news_id`, `title`, `image`, `short`, `text`, `slug`,
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_pages
+DROP TABLE IF EXISTS `easyii_pages`;
 CREATE TABLE IF NOT EXISTS `easyii_pages` (
   `page_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(128) NOT NULL,
@@ -415,6 +433,7 @@ INSERT INTO `easyii_pages` (`page_id`, `title`, `text`, `slug`) VALUES
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_photos
+DROP TABLE IF EXISTS `easyii_photos`;
 CREATE TABLE IF NOT EXISTS `easyii_photos` (
   `photo_id` int(11) NOT NULL AUTO_INCREMENT,
   `class` varchar(128) NOT NULL,
@@ -460,6 +479,7 @@ INSERT INTO `easyii_photos` (`photo_id`, `class`, `item_id`, `image`, `descripti
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_seotext
+DROP TABLE IF EXISTS `easyii_seotext`;
 CREATE TABLE IF NOT EXISTS `easyii_seotext` (
   `seotext_id` int(11) NOT NULL AUTO_INCREMENT,
   `class` varchar(128) NOT NULL,
@@ -502,6 +522,7 @@ INSERT INTO `easyii_seotext` (`seotext_id`, `class`, `item_id`, `h1`, `title`, `
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_settings
+DROP TABLE IF EXISTS `easyii_settings`;
 CREATE TABLE IF NOT EXISTS `easyii_settings` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -529,6 +550,7 @@ INSERT INTO `easyii_settings` (`setting_id`, `name`, `title`, `value`, `visibili
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_shopcart_goods
+DROP TABLE IF EXISTS `easyii_shopcart_goods`;
 CREATE TABLE IF NOT EXISTS `easyii_shopcart_goods` (
   `good_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) DEFAULT NULL,
@@ -548,6 +570,7 @@ INSERT INTO `easyii_shopcart_goods` (`good_id`, `order_id`, `item_id`, `count`, 
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_shopcart_orders
+DROP TABLE IF EXISTS `easyii_shopcart_orders`;
 CREATE TABLE IF NOT EXISTS `easyii_shopcart_orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -572,6 +595,7 @@ INSERT INTO `easyii_shopcart_orders` (`order_id`, `name`, `address`, `phone`, `e
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_subscribe_history
+DROP TABLE IF EXISTS `easyii_subscribe_history`;
 CREATE TABLE IF NOT EXISTS `easyii_subscribe_history` (
   `history_id` int(11) NOT NULL AUTO_INCREMENT,
   `subject` varchar(128) NOT NULL,
@@ -587,6 +611,7 @@ CREATE TABLE IF NOT EXISTS `easyii_subscribe_history` (
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_subscribe_subscribers
+DROP TABLE IF EXISTS `easyii_subscribe_subscribers`;
 CREATE TABLE IF NOT EXISTS `easyii_subscribe_subscribers` (
   `subscriber_id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(128) NOT NULL,
@@ -602,6 +627,7 @@ CREATE TABLE IF NOT EXISTS `easyii_subscribe_subscribers` (
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_tags
+DROP TABLE IF EXISTS `easyii_tags`;
 CREATE TABLE IF NOT EXISTS `easyii_tags` (
   `tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -624,6 +650,7 @@ INSERT INTO `easyii_tags` (`tag_id`, `name`, `frequency`) VALUES
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_tags_assign
+DROP TABLE IF EXISTS `easyii_tags_assign`;
 CREATE TABLE IF NOT EXISTS `easyii_tags_assign` (
   `class` varchar(128) NOT NULL,
   `item_id` int(11) NOT NULL,
@@ -651,6 +678,7 @@ INSERT INTO `easyii_tags_assign` (`class`, `item_id`, `tag_id`) VALUES
 
 
 -- Дамп структуры для таблица yii_easy_obits.easyii_texts
+DROP TABLE IF EXISTS `easyii_texts`;
 CREATE TABLE IF NOT EXISTS `easyii_texts` (
   `text_id` int(11) NOT NULL AUTO_INCREMENT,
   `text` text NOT NULL,
