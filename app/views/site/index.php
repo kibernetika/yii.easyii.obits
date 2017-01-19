@@ -24,7 +24,6 @@ $this->title = $page->seo('title', $page->model->title);
 <hr/>
 
 <div class="text-center">
-    <h2>Last photos</h2>
     <br/>
     <?php foreach(Gallery::last(6) as $photo) : ?>
         <?= $photo->box(180, 135) ?>
@@ -36,8 +35,7 @@ $this->title = $page->seo('title', $page->model->title);
 <hr/>
 
 <div class="text-center">
-    <h2>Last news</h2>
-    <blockquote class="text-left">
+    <blockquote class="text-center">
         <?= Html::a(News::last()->title, ['news/view', 'slug' => News::last()->slug]) ?>
         <br/>
         <?= News::last()->short ?>
@@ -47,9 +45,7 @@ $this->title = $page->seo('title', $page->model->title);
 <br/>
 <hr/>
 
-
 <div class="text-center">
-    <h2>Last article from category #1</h2>
     <br/>
     <div class="row text-left">
         <?php $article = Article::last(1, ['category_id' => 1]); ?>
@@ -66,18 +62,5 @@ $this->title = $page->seo('title', $page->model->title);
 
 <br/>
 <hr/>
-
-<div class="text-center">
-    <h2>Last reviews</h2>
-    <br/>
-    <div class="row text-left">
-        <?php foreach(Guestbook::last(2) as $post) : ?>
-            <div class="col-md-6">
-                <b><?= $post->name ?></b>
-                <p class="text-muted"><?= $post->text ?></p>
-            </div>
-        <?php endforeach;?>
-    </div>
-</div>
 
 <br/>

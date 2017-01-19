@@ -1,0 +1,534 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+}
+
+.header {
+    height: 60px;
+    display: flex;
+    background-image: url("img/headerBG.png");
+    border-bottom: 1px solid black;
+}
+
+.header ul {
+    max-width: 700px;
+    margin: auto;
+}
+
+.header li {
+    list-style: none;
+    display: inline-flex;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.header li a {
+    color: rgb(208, 188, 137);
+    text-decoration: none;
+}
+
+.header li.active a {
+    color: rgb(240, 234, 202);
+}
+
+.header li a:hover {
+    color: rgb(240, 234, 202);
+}
+
+.mainGround {
+    background-image: url("img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    width: 100%;
+    min-height: 95vh;
+    flex-direction: column;
+}
+
+/*footer*/
+
+.view{
+    min-height: calc(100vh - 130px);
+}
+
+.footer {
+    min-height: 70px;
+    display: flex;
+    align-content: center;
+}
+
+.footerLinks {
+    display: block;
+    float: left;
+    padding-left: 15px;
+}
+
+.footerLinks li {
+    list-style: none;
+    display: inline-block;
+}
+
+.footerLinks li a {
+    color: white;
+    /*text-transform: uppercase;*/
+    font-size: 12px;
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+.copyring {
+    display: block;
+    padding-left: 15px;
+    float: left;
+}
+
+.footer {
+    background-color: black;
+}
+
+ul.social-network {
+    display: flex;
+    list-style: none;
+    display: inline;
+}
+
+.social-circle li {
+    display: inline-flex;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgb(124, 133, 137);
+    padding: 0;
+}
+
+.social-circle li:hover {
+    background-color: rgb(255, 122, 0);
+}
+
+.social-circle li:hover a {
+    color: white;
+    transform: rotate(360deg);
+    transition: all 0.2s;
+}
+
+.social-circle li a {
+    color: black;
+    position: relative;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*reg form*/
+.form {
+    background: rgba(19, 35, 47, 1);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    color: #a0b3b0;
+    display: block;
+    height: inherit;
+}
+
+.tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.tab-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tab-group li a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    font-size: 18px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+}
+
+.tab-group li a:hover {
+    background: #179b77;
+    color: #ffffff;
+}
+
+.tab-group .active a {
+    background: #1ab188;
+    color: #ffffff;
+}
+
+.tab-content > div:last-child {
+    /* display: none;*/
+}
+
+input, textarea {
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #a0b3b0;
+    color: #ffffff;
+    border-radius: 0;
+    -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+    border-color: #1ab188;
+}
+
+textarea {
+    border: 2px solid #a0b3b0;
+    resize: vertical;
+}
+
+.field-wrap {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.button {
+    margin-top: 5px;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 5px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #1ab188;
+    color: #ffffff;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+}
+
+.button:hover, .button:focus {
+    background: #179b77;
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+/*about page*/
+.servicePage {
+    max-width: 700px;
+    color: rgb(104, 104, 104);
+    font-size: 18px;
+}
+
+.servicePage input {
+    outline: 0;
+    border-color: #1ab188;
+    color: black;
+}
+
+.servicePage textarea {
+    color: black;
+}
+
+.servicePage .form-group {
+
+    margin: auto;
+}
+
+.servicePage .form-group input {
+    width: 100%;
+}
+
+.about-btn {
+    width: 150px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/*Obits page prov*/
+.obitsPage {
+    min-width: 500px;
+    max-width: 1000px;
+    margin: auto;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
+
+.obitsPage .tab-group button:hover {
+    background: #179b77;
+    color: white;
+}
+
+.obitsPage .tab-group button {
+    display: inline-flex;
+    text-decoration: none;
+    padding: 5px;
+
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    border: none;
+    width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btnn {
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    height: inherit;
+    margin-bottom: 10px;
+}
+
+.activePrintType {
+    background: #1ab188;
+!important;
+    color: #ffffff;
+}
+
+.obitsPage {
+    min-height: 80vh;
+    font-size: 16px;
+}
+
+.obitsPage h2{
+    font-size: 16px;
+}
+
+.obitsPage .tab-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.obitsPage .containerObits span{
+    font-size: 16px;
+}
+
+.obitsPage .containerObits {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 25px;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.obitsPage .field-wrap {
+    min-width: 320px;
+}
+
+.obitsPage img {
+    max-width: 350px;
+
+}
+
+.obitsPage .field-wrap label {
+    width: 150px;
+}
+
+.obitsPage .field-wrap select {
+    width: 150px;
+}
+
+.orderNowButton:hover {
+    background: #179b77;
+    color: white;
+}
+
+.orderNowButton {
+    display: inline-flex;
+    text-decoration: none;
+    padding: 5px;
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    border: none;
+    width: 200px;
+    height: inherit;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    border: none;
+    display: inline;
+    justify-content: center;
+    padding: 0;
+    width: 100px;
+}
+
+.editorSteps{
+    display: block;
+    width: 100%;
+}
+
+.editorSteps ul li{
+    list-style: none;
+    display: inline-flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.editorSteps h2, h3{
+    margin-top: 0px;
+}
+
+.obitTemplate {
+    display: inline-flex;
+    ;
+}
+
+.obitTemplate input{
+    padding: 0;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    align-content: center;
+    margin: auto;
+}
+
+
+/*pages nav im*/
+#paginator{
+    width: 100%;
+    display: flex;
+    /*justify-content: center;*/
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+    overflow-x: scroll;
+}
+
+.pagesNav img:hover{
+    background-color: lightblue;
+}
+
+.pagesNav:first-child img{
+    background-color: lightblue;
+}
+
+.pagesNav {
+    display: inline-flex;
+}
+
+.pagesNav span{
+    display: block;
+    position: relative;
+    text-align: center;
+    bottom: 5px;
+    left:-20px;
+    background-color: red;
+    font-size: 16px;
+    color: white;
+    min-width: 25px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.pagesNav img{
+    width: 70px;
+}
+
+/*slider top bagin*/
+.carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+.onebyone-carosel .active.left { left: -33.33%; }
+.onebyone-carosel .active.right { left: 33.33%; }
+.onebyone-carosel .next { left: 33.33%; }
+.onebyone-carosel .prev { left: -33.33%; }
+/*slider top end*/
+
+/*editor dialogs begin*/
+.editDialog:before{
+    /*content: "";
+    z-index: 10;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: rgba(44,44,44,0.4);
+    */
+
+}
+
+#editor{
+
+}
+
+.editDialog{
+    position: absolute;
+    display: none;
+    float: left;
+    left: -10px;
+    right: 0;
+    margin: 0;
+    padding:0;
+    top: 50px;
+    width: 400px;
+    margin: auto;
+    padding: 0px;
+
+}
+
+.editDialog .dialogHead{
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    padding-left: 20px;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.editDialog form{
+    background-color: white;
+    padding: 20px;
+}
+
+.editDialog .dialogBottom{
+    background-color: lightgray;
+    border-radius: 0 0 5px 5px ;
+    padding: 10px;
+    text-align: center;
+}
+
+.editDialog input{
+    width: auto;
+    color: black;
+    display: inline-block;
+}
+
+
+/*editor dialogs end*/

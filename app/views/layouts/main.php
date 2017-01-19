@@ -27,13 +27,12 @@ $goodsCount = count(Shopcart::goods());
                         'options' => ['class' => 'nav navbar-nav'],
                         'items' => [
                             ['label' => 'Home', 'url' => ['site/index']],
-                            ['label' => 'Shop', 'url' => ['shop/index']],
-                            ['label' => 'News', 'url' => ['news/index']],
-                            ['label' => 'Articles', 'url' => ['articles/index']],
-                            ['label' => 'Gallery', 'url' => ['gallery/index']],
-                            ['label' => 'Guestbook', 'url' => ['guestbook/index']],
+                            ['label' => 'Obits', 'url' => ['obits/index']],
+
+                            ['label' => 'Rush service', 'url' => ['rush/index']],
+
                             ['label' => 'FAQ', 'url' => ['faq/index']],
-                            ['label' => 'Contact', 'url' => ['/contact/index']],
+                            ['label' => 'About us', 'url' => ['/contact/index']],
                         ],
                     ]); ?>
                     <a href="<?= Url::to(['/shopcart']) ?>" class="btn btn-default navbar-btn navbar-right" title="Complete order">

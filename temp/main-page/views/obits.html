@@ -1,0 +1,216 @@
+<div class="obitsPage">
+    <h2>Select your Print Options.</h2>
+
+    <form class="containerObits" id="simple" ng-show="!printMode">
+        <div>
+            <h3>Available Options</h3>
+            <div class="field-wrap">
+                <label>Quantity:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>4x5</option>
+                    <option>4x5</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label> Paper Type:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>4x5</option>
+                    <option>4x5</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label>Binding:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>4x5</option>
+                    <option>4x5</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label> Size:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>4x5</option>
+                    <option>4x5</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label> Color:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label> Finishing:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label> Rush Services:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label>Turn-around Time:</label>
+                <select required>
+                    <option disabled selected>Please Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="field-wrap">
+                <label>Upload File</label>
+                <input type="file" class="obitUploadButon">
+            </div>
+            <input type="submit" value="Order now" class="orderNowButton"/>
+        </div>
+        <div>
+            <img src="http://www.crystalclearimages.com/newsite/image/cache/data/products/25-600x600.jpg" alt="">
+        </div>
+    </form>
+
+
+
+    <div class="containerObits" id="editor" ng-show="printMode">
+
+        <div class="editorSteps">
+            <h2>Create new</h2>
+            <div ng-controller="TabController">
+
+
+                <div>
+                    <ul ng-show="false">
+                        <li ng-class="{ active: isSet(1) }">
+                            <a href ng-click="setTab(1)">Step 1</a>
+                        </li>
+                        <li ng-class="{ active: isSet(2) }">
+                            <a href ng-click="setTab(2)">Step 2</a>
+                        </li>
+                        <li ng-class="{ active: isSet(3) }">
+                            <a href ng-click="setTab(3)">Step 3</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+
+                    <div ng-show="isSet(1)">
+                        <h2>Settings</h2>
+                        <label>Pages number</label>
+
+                        <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars" required>
+                        </select>
+
+                        <br>
+
+                        <div>
+                            <p>Template:</p>
+                            <!-- 1-one on page, 2 - 2regions on page, 3-3region buklet in one page -->
+                            <form class="obitTemplate">
+                                <label>
+                                    <img src="img/temp1.png" alt="">
+                                    <input type="radio" ng-model="obtainTemplate.type" value="1">
+                                </label><br/>
+                                <label>
+                                    <img src="img/temp2.png" alt="">
+                                    <input type="radio" ng-model="obtainTemplate.type" value="2">
+                                </label><br/>
+                                <label>
+                                    <img src="img/temp3.png" alt="">
+                                    <input type="radio" ng-model="obtainTemplate.type" value="3 ">
+                                </label>
+                            </form>
+                            <b>{{obtainTemplate.doubleSide}}</b>
+                        </div>
+                        <div>
+                            <label>
+                                2 sides page?
+                                <input type="checkbox" ng-model="obtainTemplate.doubleSide">
+                            </label>
+                        </div>
+
+                        <input ng-click="setTab(2)" type="submit" value="Next" class="btnn activePrintType"/>
+                    </div>
+                    <div ng-show="isSet(2)">
+                        <!--
+                        <textarea id="mytextarea">Hello, World!</textarea>
+-->
+                        <button ng-click="saveCurrent()"> Save current page</button>Current page:{{currentPage}}
+
+
+
+
+                        <span id="paginator"></span>
+
+
+
+
+
+                        <form method="post" ng-controller="TinyMceController" id="editor">
+                            <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel" id="textEd"></textarea>
+                            <button ng-click="getContent()">Get content</button>
+                            <button ng-click="setContent()">Set content</button>
+                        </form>
+
+                        <!--- menu pages begin-->
+                        <div class="editDialog" id="editDialog">
+                            <div class="dialogHead">
+                                Upload Image <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+                            </div>
+                            <form>
+                                <label> Image url: <input type="text" id="utlPath" ng-model="url"></label><br>
+                                <label>image repeat: <input type="checkbox"></label><br>
+                                <label>background-size:
+                                    <input type="radio" name="bg-size" value="auto"> auto
+                                    <input type="radio" name="bg-size" value="contain"> contain
+                                    <input type="radio" name="bg-size" value="cover"> cover
+                                </label><br>
+                                <label>background-position:
+                                    <input type="radio" name="browser" value="ie"> bottom
+                                    <input type="radio" name="browser" value="opera"> center
+                                    <input type="radio" name="browser" value="firefox"> left
+                                    <input type="radio" name="browser" value="firefox"> right
+                                </label>
+                                <br>
+                                <button onclick="setImageUrl()">set image</button>
+                            </form>
+                            <div class="dialogBottom">
+                                <button class="btn btn-default" ng-click="setImage()">set <i class="fa fa-plus-circle"></i></button>
+                                <button class="btn bg-success">Done<i class="fa fa-check-circle-o" aria-hidden="true"></i></button><button class="btn btn-danger">Cancel <i class="fa fa-times-circle-o" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <!---  end-->
+
+
+
+                        <h2>Model: {{selectedCar.model}}</h2>{{text}}
+                        <span id="pageSides"><button ng-click='showSide(true);'>side 1</button><button ng-click='showSide(false);'>side 2</button></span>
+
+                    </div>
+                    <div ng-show="isSet(3)">
+                        <h2>Messages</h2>
+                        <p> Some messages </p>
+                        <input type="submit" value="Order Now" class="btnn activePrintType"/>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tab-group">
+        <button id="edit1" class="btnn activePrintType" ng-click="switchEditMode(true)">Print from PDF</button>
+        <button id="edit2" class="btnn" ng-click="switchEditMode(false)">Create new!</button>
+    </div>
+
