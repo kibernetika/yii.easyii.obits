@@ -63,7 +63,7 @@ $goodsCount = count(Shopcart::goods());
     <div class="container footer-content">
         <div class="row">
             <div class="col-md-2">
-                Subscribe to newsletters
+                Subscribe to
             </div>
             <div class="col-md-6">
                 <?php if(Yii::$app->request->get(Subscribe::SENT_VAR)) : ?>
@@ -73,7 +73,7 @@ $goodsCount = count(Shopcart::goods());
                 <?php endif; ?>
             </div>
             <div class="col-md-4 text-right">
-                ©2015 noumo
+                ©2017 SG
             </div>
         </div>
     </div>
