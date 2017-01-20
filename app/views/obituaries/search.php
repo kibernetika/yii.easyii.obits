@@ -2,10 +2,10 @@
 use yii\easyii\modules\catalog\api\Catalog;
 use yii\easyii\modules\page\api\Page;
 
-$page = Page::get('page-obits-search');
+$page = Page::get('page-obituaries-search');
 
 $this->title = $page->seo('title', $page->model->title);
-$this->params['breadcrumbs'][] = ['label' => 'Shop', 'url' => ['obits/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Shop', 'url' => ['obituaries/index']];
 $this->params['breadcrumbs'][] = $page->model->title;
 
 ?>

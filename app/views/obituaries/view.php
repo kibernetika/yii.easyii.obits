@@ -6,8 +6,8 @@ use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 $this->title = $item->seo('title', $item->model->title);
-$this->params['breadcrumbs'][] = ['label' => 'Obits', 'url' => ['obits/index']];
-$this->params['breadcrumbs'][] = ['label' => $item->cat->title, 'url' => ['obits/cat', 'slug' => $item->cat->slug]];
+$this->params['breadcrumbs'][] = ['label' => 'Obituaries', 'url' => ['obituaries/index']];
+//$this->params['breadcrumbs'][] = ['label' => $item->cat->title, 'url' => ['obits/cat', 'slug' => $item->cat->slug]];
 $this->params['breadcrumbs'][] = $item->model->title;
 
 $colors = [];
@@ -22,12 +22,12 @@ if(!empty($item->data->color) && is_array($item->data->color)) {
 <div class="row">
     <div class="col-md-4">
         <br/>
-        <?= Html::img($item->thumb(120, 240)) ?>
+        <?= Html::img($item->thumb(350, 300)) ?>
         <?php if(count($item->photos)) : ?>
             <br/><br/>
             <div>
                 <?php foreach($item->photos as $photo) : ?>
-                    <?= $photo->box(null, 100) ?>
+                    <?= $photo->box(null, 300) ?>
                 <?php endforeach;?>
                 <?php Catalog::plugin() ?>
             </div>
@@ -43,15 +43,17 @@ if(!empty($item->data->color) && is_array($item->data->color)) {
                     <?php endif; ?>
                 </h2>
                 <h3>Characteristics</h3>
-                <span class="text-muted">Brand:</span> <?= $item->data->brand ?>
+                <span class="text-muted">Properties 1:</span> <?= $item->data->brand ?> value
                 <br/>
-                <span class="text-muted">Storage:</span> <?= $item->data->storage ?> GB
+                <span class="text-muted">Properties 2:</span> <?= $item->data->storage ?> value
                 <br/>
-                <span class="text-muted">Touchscreen:</span> <?= $item->data->touchscreen ? 'Yes' : 'No' ?>
+                <span class="text-muted">Properties 3:</span> <?= $item->data->touchscreen ? 'Yes' : 'No' ?>
                 <br/>
-                <span class="text-muted">CPU cores:</span> <?= $item->data->cpu ?>
+                <span class="text-muted">Properties 4:</span> <?= $item->data->cpu ?> value
                 <br/>
-                <span class="text-muted">Availability:</span> <?= $item->available ? $item->available : 'Out of stock' ?>
+                <span
+                    class="text-muted">Availability:</span> <?= $item->available ? $item->available : 'Out of stock' ?>
+                value
                 <?php if(!empty($item->data->features)) : ?>
                     <br/>
                     <span class="text-muted">Features:</span> <?= implode(', ', $item->data->features) ?>

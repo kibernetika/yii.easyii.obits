@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <?php foreach($goods as $good) : ?>
                     <tr>
                         <td>
-                            <?= Html::a($good->item->title, ['/obits/view', 'slug' => $good->item->slug]) ?>
+                            <?= Html::a($good->item->title, ['/obituaries/view', 'slug' => $good->item->slug]) ?>
                             <?= $good->options ? "($good->options)" : '' ?>
                         </td>
                         <td><?= Html::textInput("Good[$good->id]", $good->count, ['class' => 'form-control input-sm']) ?></td>

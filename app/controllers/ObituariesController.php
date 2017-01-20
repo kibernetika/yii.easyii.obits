@@ -7,17 +7,18 @@ use Yii;
 use yii\easyii\modules\catalog\api\Catalog;
 use yii\web\NotFoundHttpException;
 
-class ObitsController extends \yii\web\Controller
+class ObituariesController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+//        return $this->redirect('index');
+        return $this->actionCat(Catalog::cats()[0]);
     }
 
     public function actionCat($slug)
     {
         $filterForm = new GadgetsFilterForm();
-        $cat = Catalog::cat($slug);
+        $cat = Catalog::cat(0);
 
         if(!$cat){
             throw new NotFoundHttpException('Shop category not found.');
@@ -30,10 +31,10 @@ class ObitsController extends \yii\web\Controller
         return $this->render('cat', [
             'cat' => $cat,
             'items' => $cat->items([
-                'pagination' => ['pageSize' => 8],
-                'filters' => $filters
+                'pagination' => ['pageSize' => 9],
+//                'filters' => $filters
             ]),
-            'filterForm' => $filterForm
+//            'filterForm' => $filterForm
         ]);
     }
 

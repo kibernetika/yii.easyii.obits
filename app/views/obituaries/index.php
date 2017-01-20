@@ -4,14 +4,14 @@ use yii\easyii\modules\file\api\File;
 use yii\easyii\modules\page\api\Page;
 use yii\helpers\Html;
 
-$page = Page::get('page-obits');
+$page = Page::get('page-obituaries');
 
 $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 
 function renderNode($node){
     if(!count($node->children)){
-        $html = '<li>' . Html::a($node->title, ['/obits/cat', 'slug' => $node->slug]) . '</li>';
+        $html = '<li>' . Html::a($node->title, ['/obituaries/cat', 'slug' => $node->slug]) . '</li>';
     } else {
         $html = '<li>'.$node->title.'</li>';
         $html .= '<ul>';
@@ -42,7 +42,7 @@ function renderNode($node){
         <?php foreach(Catalog::last(3) as $item) : ?>
             <p>
                 <?= Html::img($item->thumb(30)) ?>
-                <?= Html::a($item->title, ['/obits/view', 'slug' => $item->slug]) ?><br/>
+                <?= Html::a($item->title, ['/obituaries/view', 'slug' => $item->slug]) ?><br/>
                 <span class="label label-warning"><?= $item->price ?>$</span>
             </p>
         <?php endforeach; ?>

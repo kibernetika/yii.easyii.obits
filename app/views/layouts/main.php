@@ -27,7 +27,7 @@ $goodsCount = count(Shopcart::goods());
                         'options' => ['class' => 'nav navbar-nav'],
                         'items' => [
                             ['label' => 'Home', 'url' => ['site/index']],
-                            ['label' => 'Obits', 'url' => ['obits/index']],
+                            ['label' => 'Obituaries', 'url' => ['obituaries/index']],
 
                             ['label' => 'Rush service', 'url' => ['rush/index']],
 

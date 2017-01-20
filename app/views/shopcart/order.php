@@ -20,7 +20,7 @@ $this->title = 'Order details';
     <?php foreach($order->goods as $good) : ?>
         <tr>
             <td>
-                <?= Html::a($good->item->title, ['/obits/view', 'slug' => $good->item->slug]) ?>
+                <?= Html::a($good->item->title, ['/obituaries/view', 'slug' => $good->item->slug]) ?>
                 <?= $good->options ? "($good->options)" : '' ?>
             </td>
             <td><?= $good->count ?></td>
