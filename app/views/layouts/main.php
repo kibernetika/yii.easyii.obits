@@ -8,9 +8,11 @@ use yii\widgets\Menu;
 $goodsCount = count(Shopcart::goods());
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-<div id="wrapper" class="container">
+
+
+<div id="wrapper" class="no-padding container">
     <header>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default obHeader">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
@@ -19,22 +21,22 @@ $goodsCount = count(Shopcart::goods());
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= Url::home() ?>">Easyii shop</a>
+                    <a class="navbar-brand" href="<?= Url::home() ?>">Company</a>
                 </div>
 
-                <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="collapse navbar-collapse usr" id="navbar-menu">
                     <?= Menu::widget([
                         'options' => ['class' => 'nav navbar-nav'],
                         'items' => [
                             ['label' => 'Home', 'url' => ['site/index']],
                             ['label' => 'Obituaries', 'url' => ['obituaries/index']],
-
                             ['label' => 'Rush service', 'url' => ['rush/index']],
-
                             ['label' => 'FAQ', 'url' => ['faq/index']],
                             ['label' => 'About us', 'url' => ['/contact/index']],
+
                         ],
                     ]); ?>
+
                     <a href="<?= Url::to(['/shopcart']) ?>" class="btn btn-default navbar-btn navbar-right" title="Complete order">
                         <i class="glyphicon glyphicon-shopping-cart"></i>
                         <?php if($goodsCount > 0) : ?>
@@ -60,20 +62,20 @@ $goodsCount = count(Shopcart::goods());
     </main>
 </div>
 <footer>
-    <div class="container footer-content">
-        <div class="row">
-            <div class="col-md-2">
-                Subscribe to
+    <div class=" footer">
+        <div class="container">
+            <div class="footerNav">
+                <div class="copyring"> Copyright Company 2017, all rights reserved</div>
             </div>
-            <div class="col-md-6">
-                <?php if(Yii::$app->request->get(Subscribe::SENT_VAR)) : ?>
-                    You have successfully subscribed
-                <?php else : ?>
-                    <?= Subscribe::form() ?>
-                <?php endif; ?>
-            </div>
-            <div class="col-md-4 text-right">
-                ©2017 SG
+
+            <div class="socials">
+                <ul class="social-network social-circle">
+                    <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>

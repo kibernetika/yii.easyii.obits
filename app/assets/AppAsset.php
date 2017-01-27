@@ -8,8 +8,9 @@ class AppAsset extends \yii\web\AssetBundle
 //    public $sourcePath = '@app/media';
     public $css = [
         'css/styles.css',
-        'css/test.css',
-        'css/carusel.css'
+        'css/font-awesome.css',
+        'css/carusel.css',
+        'css/custom.css',
     ];
     public $js = [
         'js/scripts.js'

@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Shop', 'url' => ['obituaries/index
     <br/>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-24">
             <?php if (count($items)) : ?>
                 <?php foreach ($items as $item) : ?>
                     <div class="col-md-4">

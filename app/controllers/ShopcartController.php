@@ -33,7 +33,8 @@ class ShopcartController extends \yii\web\Controller
         $form = new AddToCartForm();
         $success = 0;
         if($form->load(Yii::$app->request->post()) && $form->validate()){
-            $response = Shopcart::add($item->id, $form->count, $form->color);
+//            $response = Shopcart::add($item->id, $form->count, $form->color);
+            $response = Shopcart::add($item->id, $form->count);
             $success = $response['result'] == 'success' ? 1 : 0;
         }
 

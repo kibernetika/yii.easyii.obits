@@ -31,7 +31,7 @@ class ObituariesController extends \yii\web\Controller
         return $this->render('cat', [
             'cat' => $cat,
             'items' => $cat->items([
-                'pagination' => ['pageSize' => 9],
+                'pagination' => ['pageSize' => 27],
 //                'filters' => $filters
             ]),
 //            'filterForm' => $filterForm
